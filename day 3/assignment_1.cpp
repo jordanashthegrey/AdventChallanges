@@ -4,6 +4,23 @@
 #include <string>
 #include <stdlib.h>
 
+int checkBigger(int countOne, int countZero, std::vector<int> &gamma, std::vector<int> &epsilon)
+{
+
+    if (countOne > countZero)
+    {
+        gamma.push_back(1);
+        epsilon.push_back(0);
+    }
+    else
+    {
+        gamma.push_back(0);
+        epsilon.push_back(1);
+    }
+
+    return 0;
+}
+
 int main()
 {
     std::ifstream inFS;
@@ -36,31 +53,22 @@ int main()
             }
             // std::cout << bitList.at(i)[0] << std::endl;
         }
-        if (countOne > countZero)
-        {
-            gamma.push_back(1);
-            epsilon.push_back(0);
-        }
-        else
-        {
-            gamma.push_back(0);
-            epsilon.push_back(1);
-        }
+
+        checkBigger(countOne, countZero, gamma, epsilon);
         countOne = 0;
         countZero = 0;
-        // std::cout << countOne << std::endl;
-        // std::cout << countZero << std::endl;
     }
 
-    for (int i = 0; i < gamma.size(); i++) {
+    for (int i = 0; i < gamma.size(); i++)
+    {
         std::cout << gamma.at(i);
     }
     std::cout << std::endl;
 
-    for (int i = 0; i < epsilon.size(); i++) {
+    for (int i = 0; i < epsilon.size(); i++)
+    {
         std::cout << epsilon.at(i);
     }
-
 
     return 0;
 }

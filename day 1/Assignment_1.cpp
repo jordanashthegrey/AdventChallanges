@@ -28,7 +28,7 @@ int main()
         if (numbers.at(i) > numbers.at(i - 1))
         {
             counter +=1;
-        }
+        } 
     }
 
     std::cout << counter;
